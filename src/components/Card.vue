@@ -1,10 +1,11 @@
 <template>
   <div>
     <div class="card">
-        {{ title }}
-        {{ originalTitle }}
-        {{ originalLanguage }}
-        {{ vote }}
+        <h2>{{ title }}</h2>
+        <h4>{{ originalTitle }}</h4>
+        <span>{{ originalLanguage }}</span>
+        <!-- <p class="fi-it"></p> -->
+        <span>{{ vote }}</span>
     </div>
   </div>
 </template>
@@ -20,6 +21,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 
 </style>

@@ -2,18 +2,22 @@
   <div>
     <FilmList 
         :films="films"/>
+
+    <TvShowList 
+        :tvShows="tvShows"/>
   </div>
 </template>
 
 <script>
 import FilmList from "./FilmList.vue";
+import TvShowList from "./TvShowList.vue";
 export default {
-    props: ['films'],
+    props: ['films', 'tvShows'],
     
-    components: { FilmList }
+    components: { FilmList, TvShowList }
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 
 </style>

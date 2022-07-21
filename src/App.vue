@@ -2,7 +2,8 @@
   <div id="app">
     <Header @search="textToSearch"/>
     <Main
-      :films="searchedFilm"/>
+      :films="searchedFilm"
+      :tvShows="searchedTvSohws"/>
   </div>
 </template>
 
@@ -20,15 +21,22 @@ export default {
   data: function(){
     return{
       searchedFilm: [],
+      searchedTvSohws: [],
     }
   },
   methods: {
     textToSearch(inputSearch){
       axios.get('https://api.themoviedb.org/3/search/movie?api_key=5d52abd6795445439ccc206e6fdec146&language=it-IT&query=' + inputSearch + '&page=1&include_adult=true')
       .then((result) => {
-        console.log(inputSearch);
+        console.log(inputSearch + 'film');
         this.searchedFilm = result.data.results;
         console.log(this.searchedFilm);
+      })
+      axios.get('https://api.themoviedb.org/3/search/tv?api_key=5d52abd6795445439ccc206e6fdec146&language=it-IT&page=1&query='+ inputSearch + '&include_adult=true')
+      .then((resultShow) => {
+        console.log(inputSearch + 'serie');
+        this.searchedTvSohws = resultShow.data.results;
+        console.log(this.searchedTvSohws);
       })
     },
   }
@@ -36,5 +44,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import'../node_modules/flag-icons/css/flag-icons.css'
 
 </style>

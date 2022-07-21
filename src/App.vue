@@ -1,11 +1,8 @@
 <template>
   <div id="app">
     <Header @search="textToSearch"/>
-    <Main v-for="(film, index) in searchedFilm" :key="index"
-      :title="film.title"
-      :originalTitle="film.original_title"
-      :language="film.original_language"
-      :vote="film.vote_average"/>
+    <Main
+      :films="searchedFilm"/>
   </div>
 </template>
 

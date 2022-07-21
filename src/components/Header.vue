@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <div>
     <div>
         logo
     </div>
@@ -11,7 +11,7 @@
             Cerca
         </button>
     </div>
-  </header>
+  </div>
 </template>
 
 <script>

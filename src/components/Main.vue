@@ -1,22 +1,16 @@
 <template>
-  <main>
-    <div>
-        {{ title }}
-        {{ originalTitle }}
-        {{ language }}
-        {{ vote }}
-    </div>
-  </main>
+  <div>
+    <FilmList 
+        :films="films"/>
+  </div>
 </template>
 
 <script>
+import FilmList from "./FilmList.vue";
 export default {
-    props: {
-        title: String,
-        originalTitle: String,
-        language: String,
-        vote: Number
-    },
+    props: ['films'],
+    
+    components: { FilmList }
 }
 </script>
 

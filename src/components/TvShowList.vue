@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Card v-for="(tvShow, index) in tvShows" :key="index"
+    <Card v-for="tvShow in tvShows" :key="tvShow.id"
         :title="tvShow.name"
         :originalTitle="tvShow.original_name"
         :originalLanguage="tvShow.original_language"

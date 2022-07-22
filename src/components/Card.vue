@@ -3,7 +3,7 @@
     <div class="card">
         <h2>{{ title }}</h2>
         <h4>{{ originalTitle }}</h4>
-        <span>{{ originalLanguage }}</span>
+        <p>{{ originalLanguage }}</p>
         <!-- <p class="fi-it"></p> -->
         <span>{{ vote }}</span>
     </div>
@@ -17,7 +17,7 @@ export default {
         originalTitle: String,
         originalLanguage: String,
         vote: Number,
-    }
+    },
 }
 </script>
 

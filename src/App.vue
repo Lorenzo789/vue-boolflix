@@ -22,17 +22,18 @@ export default {
     return{
       searchedFilm: [],
       searchedTvSohws: [],
+      apiKey: '5d52abd6795445439ccc206e6fdec146',
     }
   },
   methods: {
     textToSearch(inputSearch){
-      axios.get('https://api.themoviedb.org/3/search/movie?api_key=5d52abd6795445439ccc206e6fdec146&language=it-IT&query=' + inputSearch + '&page=1&include_adult=true')
+      axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&language=it-IT&query=${inputSearch}&include_adult=true`)
       .then((result) => {
         console.log(inputSearch + 'film');
         this.searchedFilm = result.data.results;
         console.log(this.searchedFilm);
       })
-      axios.get('https://api.themoviedb.org/3/search/tv?api_key=5d52abd6795445439ccc206e6fdec146&language=it-IT&page=1&query='+ inputSearch + '&include_adult=true')
+      axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${this.apiKey}&language=it-IT&query=${inputSearch}&include_adult=true`)
       .then((resultShow) => {
         console.log(inputSearch + 'serie');
         this.searchedTvSohws = resultShow.data.results;

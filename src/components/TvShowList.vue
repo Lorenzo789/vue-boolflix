@@ -1,10 +1,11 @@
 <template>
   <div>
     <Card v-for="tvShow in tvShows" :key="tvShow.id"
-        :title="tvShow.name"
-        :originalTitle="tvShow.original_name"
-        :originalLanguage="tvShow.original_language"
-        :vote="tvShow.vote_average"/>
+      :imageUrl="tvShow.poster_path"
+      :title="tvShow.name"
+      :originalTitle="tvShow.original_name"
+      :originalLanguage="tvShow.original_language"
+      :vote="tvShow.vote_average"/>
   </div>
 </template>
 

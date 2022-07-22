@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="card">
-
+      <img :src="`${baseUrlDimension}${imageUrl}`" alt="">
       <h2>{{ title }}</h2>
       <h4>{{ originalTitle }}</h4>
       <span :class="`fi-${returnStringFlag(originalLanguage)} fi flag`"></span>
@@ -14,10 +14,16 @@
 <script>
 export default {
   props: {
+      imageUrl: String,
       title: String,
       originalTitle: String,
       originalLanguage: String,
       vote: Number,
+  },
+  data: function(){
+    return{
+      baseUrlDimension: 'https://image.tmdb.org/t/p/w342/',
+    }
   },
   methods: {
     returnStringFlag(originalLanguage){
@@ -28,7 +34,7 @@ export default {
       } else if (language == 'ja') {
         return 'jp';
       } else {
-        return 'not-present'
+        return 'not-present';
       }
     },
     flagSwitch(language){
@@ -60,15 +66,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .flag{
-    display: block;
-    width: 20px;
-    height: 20px;
-  }
-  .fi-not-present{
-    background-image: url('https://thumbs.dreamstime.com/b/no-image-available-icon-photo-camera-flat-vector-illustration-132483141.jpg');
-    display: block;
-    width: 20px;
-    height: 20px;
+  .card{
+    
+    .flag{
+      display: block;
+      width: 20px;
+      height: 20px;
+    }
+    .fi-not-present{
+      background-image: url('https://thumbs.dreamstime.com/b/no-image-available-icon-photo-camera-flat-vector-illustration-132483141.jpg');
+      display: block;
+      width: 20px;
+      height: 20px;
+    }
   }
 </style>

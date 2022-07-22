@@ -4,7 +4,7 @@
       <h2>{{ title }}</h2>
       <h4>{{ originalTitle }}</h4>
       <span :class="`fi-${returnStringFlag(originalLanguage)} fi flag`"></span>
-      <span>Voto: {{ vote }}</span>
+      <span>Voto:<i class="fa-solid fa-star" v-for="(star, index) in changeVoteIntoStars(vote)" :key="index"></i></span>
 
     </div>
   </div>
@@ -13,11 +13,11 @@
 <script>
 export default {
   props: {
-      imageUrl: String,
-      title: String,
-      originalTitle: String,
-      originalLanguage: String,
-      vote: Number,
+    imageUrl: String,
+    title: String,
+    originalTitle: String,
+    originalLanguage: String,
+    vote: Number,
   },
   data: function(){
     return{
@@ -51,13 +51,17 @@ export default {
           return 'not-present';
       }
     },
-  }
+    changeVoteIntoStars(vote){
+      let newVote = Math.ceil((vote * 5) / 10);
+      return newVote;
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
   .card{
-    
+    font-weight: bold;
     .flag{
       display: block;
       width: 20px;
@@ -68,6 +72,9 @@ export default {
       display: block;
       width: 20px;
       height: 20px;
+    }
+    span>i{
+      color: yellow;
     }
   }
 </style>

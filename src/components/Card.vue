@@ -4,7 +4,7 @@
 
       <h2>{{ title }}</h2>
       <h4>{{ originalTitle }}</h4>
-      <span :class="`fi-${returnStringFlag(originalLanguage)} fi flag no-flag`">{{ originalLanguage }}</span>
+      <span :class="`fi-${returnStringFlag(originalLanguage)} fi flag`"></span>
       <span>Voto: {{ vote }}</span>
 
     </div>
@@ -28,10 +28,8 @@ export default {
       } else if (language == 'ja') {
         return 'jp';
       } else {
-        console.log('non registrata');
+        return 'not-present'
       }
-
-      return language;
     },
     flagSwitch(language){
       switch (language) {
@@ -67,7 +65,10 @@ export default {
     width: 20px;
     height: 20px;
   }
-  .no-flag{
-    text-transform: uppercase;
+  .fi-not-present{
+    background-image: url('https://thumbs.dreamstime.com/b/no-image-available-icon-photo-camera-flat-vector-illustration-132483141.jpg');
+    display: block;
+    width: 20px;
+    height: 20px;
   }
 </style>

@@ -4,22 +4,8 @@
 
       <h2>{{ title }}</h2>
       <h4>{{ originalTitle }}</h4>
-      <span :class=""></span>
-
-      <!-- <div v-if="originalLanguage == 'it'">
-        <span class="fi-it fi flag"></span>
-      </div>
-      <div v-else-if="originalLanguage == 'en'">
-        <span class="fi-gb fi flag"></span>
-      </div>
-      <div v-else-if="originalLanguage == 'fr'">
-        <span class="fi-fr fi flag"></span>
-      </div>
-      <div v-else>
-        <span class="no-flag">{{ originalLanguage }}</span>
-      </div> -->
-
-      <span">Voto: {{ vote }}</span>
+      <span :class="`fi-${returnStringFlag(originalLanguage)} fi flag no-flag`">{{ originalLanguage }}</span>
+      <span>Voto: {{ vote }}</span>
 
     </div>
   </div>
@@ -36,7 +22,15 @@ export default {
   methods: {
     returnStringFlag(originalLanguage){
       const language = String(originalLanguage);
-      console.log(originalLanguage);
+
+      if (language == 'en') {
+        return 'gb';
+      } else if (language == 'ja') {
+        return 'jp';
+      } else {
+        console.log('non registrata');
+      }
+
       return language;
     },
     flagSwitch(language){

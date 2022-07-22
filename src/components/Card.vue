@@ -1,7 +1,6 @@
 <template>
   <div>
-    <div class="card">
-      <img :src="`${baseUrlDimension}${imageUrl}`" alt="">
+    <div class="card" :style="{'background-image': `url(${baseUrlDimension}${imageUrl})`}">
       <h2>{{ title }}</h2>
       <h4>{{ originalTitle }}</h4>
       <span :class="`fi-${returnStringFlag(originalLanguage)} fi flag`"></span>
@@ -29,36 +28,27 @@ export default {
     returnStringFlag(originalLanguage){
       const language = String(originalLanguage);
 
-      if (language == 'en') {
-        return 'gb';
-      } else if (language == 'ja') {
-        return 'jp';
-      } else {
-        return 'not-present';
-      }
-    },
-    flagSwitch(language){
       switch (language) {
         case 'it':
-          console.log('italiano');
+          return 'it';
         break;
         case 'en':
-          console.log('inglese');
+          return 'gb';
         break;
         case 'fr':
-          console.log('francese');
+          return 'fr';
         break;
-        case 'jp':
-          console.log('giapponese');
+        case 'ja':
+          return 'jp';
         break
         case 'ru':
-          console.log('russa');
+          return 'ru';
         break
         case 'de':
-          console.log('tedesca');
+          return 'de';
         break
         default:
-          console.log('non registrata');
+          return 'not-present';
       }
     },
   }

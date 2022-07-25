@@ -87,8 +87,7 @@ export default {
   .card-parent{
     width: calc(100% / 4 - 20px);
     height: 500px;
-    margin-bottom: 20px;
-    margin-right: 20px;
+    margin: 0px 20px 20px 0px;
     .hover-card{
       overflow: auto;
       height: 100%;
@@ -96,10 +95,7 @@ export default {
       background-color: black;
       color: white;
       text-align: start;
-      h4{
-        margin-bottom: 10px;
-      }
-      span{
+      h4, span{
         margin-bottom: 10px;
       }
       p{
@@ -110,6 +106,7 @@ export default {
     .card{
       height: 100%;
       list-style: none;
+      border: 1px solid black;
       }
       .flag{
         display: block;

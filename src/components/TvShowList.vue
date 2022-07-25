@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Serie</h1>
+    <h1>Series:</h1>
     <div class="wrapper-show">
       <Card v-for="tvShow in tvShows" :key="tvShow.id"
         :imageUrl="tvShow.poster_path"
@@ -29,10 +29,10 @@ export default {
     font-size: 40px;
     color: $red;
     margin-bottom: 10px;
+    text-transform: uppercase;
   }
   .wrapper-show{
     display: flex;
     flex-wrap: wrap;
-
   }
 </style>

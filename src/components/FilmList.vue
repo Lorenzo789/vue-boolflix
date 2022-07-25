@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Film</h1>
+    <h1>Films:</h1>
     <div class="wrapper">
       <Card v-for="film in films" :key="film.id"
         :imageUrl="film.poster_path"
@@ -29,6 +29,7 @@ export default {
     font-size: 40px;
     color: $red;
     margin-bottom: 10px;
+    text-transform: uppercase;
   }
 
   .wrapper{

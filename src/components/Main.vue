@@ -1,10 +1,16 @@
 <template>
   <div>
-    <FilmList 
-        :films="films"/>
+    <div class="films-container">
+      <FilmList 
+          :films="films"
+      />
+    </div>
 
-    <TvShowList 
-        :tvShows="tvShows"/>
+    <div class="series-container">
+      <TvShowList 
+          :tvShows="tvShows"
+      />
+    </div>
   </div>
 </template>
 
@@ -19,5 +25,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import'../styles/variables.scss';
+
+  div{
+    background-color: #252525;
+    padding: 10px;
+  }
 
 </style>

@@ -18,5 +18,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import'../styles/variables.scss';
+
+  h1{
+    font-weight: bold;
+    color: $red;
+  }
 
 </style>

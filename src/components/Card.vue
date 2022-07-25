@@ -1,11 +1,10 @@
 <template>
-  <div>
+  <div class="card-parent">
     <div class="card" :style="{'background-image': `url(${baseUrlDimension}${imageUrl})`}">
       <h2>{{ title }}</h2>
       <h4>{{ originalTitle }}</h4>
       <span :class="`fi-${returnStringFlag(originalLanguage)} fi flag`"></span>
       <span>Voto:<i class="fa-solid fa-star" v-for="(star, index) in changeVoteIntoStars(vote)" :key="index"></i></span>
-
     </div>
   </div>
 </template>
@@ -60,21 +59,29 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .card{
+@import'../styles/variables.scss';
+
+  .card-parent{
     font-weight: bold;
-    .flag{
-      display: block;
-      width: 20px;
-      height: 20px;
-    }
-    .fi-not-present{
-      background-image: url('https://thumbs.dreamstime.com/b/no-image-available-icon-photo-camera-flat-vector-illustration-132483141.jpg');
-      display: block;
-      width: 20px;
-      height: 20px;
-    }
-    span>i{
-      color: yellow;
+    width: calc(100% / 4 - 20px);
+    height: 500px;
+    margin-bottom: 20px;
+    .card{
+      height: 100%;
+      .flag{
+        display: block;
+        width: 20px;
+        height: 20px;
+      }
+      .fi-not-present{
+        background-image: url('https://thumbs.dreamstime.com/b/no-image-available-icon-photo-camera-flat-vector-illustration-132483141.jpg');
+        display: block;
+        width: 20px;
+        height: 20px;
+      }
+      span>i{
+        color: yellow;
+      }
     }
   }
 </style>

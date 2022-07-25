@@ -44,7 +44,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import'../node_modules/flag-icons/css/flag-icons.css';
 @import'./styles/generals.scss';
 @import'./styles/variables.scss';

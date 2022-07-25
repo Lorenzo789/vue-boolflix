@@ -46,6 +46,8 @@ export default {
         case 'de':
           return 'de';
         break
+        case 'es':
+          return 'es';
         default:
           return 'not-present';
       }
@@ -66,6 +68,7 @@ export default {
     width: calc(100% / 4 - 20px);
     height: 500px;
     margin-bottom: 20px;
+    margin-right: 20px;
     .card{
       height: 100%;
       .flag{

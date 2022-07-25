@@ -4,7 +4,7 @@
         <h1>BOOLFIX</h1>
     </div>
     <div>
-        <input @keyup="$emit('search', inputSearch)" type="text" placeholder="Search"
+        <input @keyup.enter="$emit('search', inputSearch)" type="text" placeholder="Search"
             v-model="inputSearch">
 
         <button @click="$emit('search', inputSearch)">

@@ -1,12 +1,14 @@
 <template>
   <div>
+    <h1>Film</h1>
     <div class="wrapper">
       <Card v-for="film in films" :key="film.id"
         :imageUrl="film.poster_path"
         :title="film.title"
         :originalTitle="film.original_title"
         :originalLanguage="film.original_language"
-        :vote="film.vote_average"/>
+        :vote="film.vote_average"
+        :overview="film.overview"/>
     </div>
   </div>
 </template>
@@ -22,14 +24,16 @@ export default {
 <style lang="scss" scoped>
 @import'../styles/variables.scss';
 
+  h1{
+    text-align: center;
+    font-size: 40px;
+    color: $red;
+    margin-bottom: 10px;
+  }
+
   .wrapper{
     display: flex;
     flex-wrap: wrap;
-
-    h1{
-      font-weight: bold;
-      color: $red;
-    }
   }
 
 </style>

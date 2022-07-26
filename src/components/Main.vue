@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- FARE UNA FUNZIONE -->
-    <div v-if="films.length == 0 && tvShows.length == 0">
+    <div v-if="isArrayEmpty()">
       <h1 class="research-not-found">Not Found</h1>
     </div>
     <div v-else>
@@ -27,6 +27,20 @@ export default {
     props: ['films', 'tvShows'],
     
     components: { FilmList, TvShowList },
+  data: function(){
+    return{
+      isEmpty: true,
+    }
+  },
+  methods: {
+    isArrayEmpty(){
+      if ((this.films.length == 0) && (this.tvShows.length == 0)) {
+        return this.isEmpty = true;
+      } else {
+        return this.isEmpty = false;
+      }
+    }
+  }
 }
 </script>
 

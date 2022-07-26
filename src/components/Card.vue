@@ -85,7 +85,7 @@ export default {
 @import'../styles/variables.scss';
 
   .card-parent{
-    width: calc(100% / 4 - 20px);
+    width: calc(100% / 5 - 20px);
     height: 500px;
     margin: 0px 20px 20px 0px;
     .hover-card{
